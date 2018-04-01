@@ -35,6 +35,59 @@ img {
 .text-center {
   text-align: center; }
 
+.alpin-tabs .trigger-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.alpin-tabs .trigger {
+  padding: 10px;
+  border: 1px solid;
+  cursor: pointer; }
+  .alpin-tabs .trigger.active-trigger {
+    background-color: yellow; }
+
+.alpin-tabs .content-container {
+  position: relative;
+  height: 600px; }
+  .alpin-tabs .content-container > .trigger {
+    display: none !important; }
+
+.alpin-tabs .my-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: -1; }
+  .alpin-tabs .my-content.active-content {
+    display: block !important;
+    z-index: 1; }
+
+.alpin-accordion .trigger {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid;
+  cursor: pointer; }
+  .alpin-accordion .trigger.active-trigger {
+    background-color: yellow; }
+
+.alpin-accordion .trigger-container {
+  display: none; }
+
+.alpin-accordion .my-content {
+  position: relative;
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: max-height 0.3s cubic-bezier(0.44, 0.64, 0.4, 0.97);
+  -o-transition: max-height 0.3s cubic-bezier(0.44, 0.64, 0.4, 0.97);
+  transition: max-height 0.3s cubic-bezier(0.44, 0.64, 0.4, 0.97);
+  padding: 0px;
+  padding: 0 15px; }
+  .alpin-accordion .my-content.active-content {
+    max-height: 600px;
+    padding: 15px; }
+
 body, html {
   height: 100%;
   padding: 0;

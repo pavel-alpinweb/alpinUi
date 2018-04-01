@@ -1,0 +1,31 @@
+.alpin-tabs{
+	.trigger-container{
+		display: flex;
+	}
+	.trigger{
+		padding: 10px;
+		border: 1px solid;
+		cursor: pointer;
+		&.active-trigger{
+			background-color: yellow;
+		}
+	}
+	.content-container{
+		position: relative;
+		height: 600px;
+		&>.trigger{
+			display: none!important;
+		}
+	}
+	.my-content{
+		position: absolute;
+		left: 0;
+		top:0;
+		right: 0;
+		z-index: -1;
+		&.active-content{
+			display: block!important;
+			z-index: 1;
+		}
+	}
+}

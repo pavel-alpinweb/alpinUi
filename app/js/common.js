@@ -1,21 +1,36 @@
 $(document).ready(function() {
 
-	//E-mail Ajax Send
-	//Documentation & Example: https://github.com/agragregra/uniMail
-	$("form").submit(function() { //Change
-		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "mail.php", //Change
-			data: th.serialize()
-		}).done(function() {
-			alert("Thank you!");
-			setTimeout(function() {
-				// Done Functions
-				th.trigger("reset");
-			}, 1000);
+			// Добавляем тригеры для аккоридона
+
+			$('.trigger-container .trigger').each(function(index, el) {
+				var accordionTrigger = $(this).clone();
+				var myTarget = $(this).attr('data-target');
+				$('#' + myTarget).before(accordionTrigger);
+			});
+
+			
+			
+			
+		
+		/*главная функция смены элемента*/
+		
+		$('.trigger').click(function(event) {
+			/*Получаем нужный объект*/
+			var myTarget = $(this).attr('data-target');
+			
+			/*Показываем нужынй объект другие прячем*/
+			$('.my-content').removeClass('active-content');
+			$('#' + myTarget).addClass('active-content');
+
+			// меняем активность у вкладок
+			var activeContent = $('#' + myTarget).attr('id');
+			$('.trigger').removeClass('active-trigger');
+			$('[data-target=' + activeContent + ']').addClass('active-trigger');	
 		});
-		return false;
+
+
+	$('.change-style').click(function(event) {
+		$('.alpin-ui').toggleClass('alpin-accordion');
+		$('.alpin-ui').toggleClass('alpin-tabs');
 	});
-	
 });

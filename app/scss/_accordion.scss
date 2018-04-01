@@ -1,0 +1,26 @@
+.alpin-accordion{
+	.trigger{
+		width: 100%;
+		padding: 10px;
+		border: 1px solid;
+		cursor: pointer;
+		&.active-trigger{
+			background-color: yellow;
+		}
+	}
+	.trigger-container{
+		display: none;
+	}
+	.my-content{
+		position: relative;
+		overflow: hidden;
+		max-height: 0;
+		transition: max-height .3s cubic-bezier(.44,.64,.4,.97);
+		padding: 0px;
+		padding: 0 15px;
+		&.active-content{
+			max-height: 600px;
+			padding: 15px;
+		}
+	}
+}
