@@ -17,14 +17,14 @@ $(document).ready(function() {
 		$('.trigger').click(function(event) {
 			/*Получаем нужный объект*/
 			var myTarget = $(this).attr('data-target');
-			var container = $(this).parents('alpin-ui');
+			
 			/*Показываем нужынй объект другие прячем*/
 			$('.my-content').removeClass('active-content');
 			$('#' + myTarget).addClass('active-content');
 
 			// меняем активность у вкладок
 			var activeContent = $('#' + myTarget).attr('id');
-			$(container).children('.trigger').removeClass('active-trigger');
+			$('.trigger').removeClass('active-trigger');
 			$('[data-target=' + activeContent + ']').addClass('active-trigger');	
 		});
 
