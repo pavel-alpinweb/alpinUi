@@ -90,6 +90,22 @@ img {
     max-height: 600px;
     padding: 15px; }
 
+@-webkit-keyframes slide {
+  from {
+    opacity: 0;
+    top: 50vh; }
+  to {
+    opacity: 1;
+    top: 0vh; } }
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    top: 50vh; }
+  to {
+    opacity: 1;
+    top: 0vh; } }
+
 .alpin-lightbox .content-container > .trigger {
   display: none; }
 
@@ -116,18 +132,15 @@ img {
   border-radius: 10px;
   background-color: #fff;
   height: 0px;
-  top: 50%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  margin: auto;
-  -webkit-transition: top .4s;
-  -o-transition: top .4s;
-  transition: top .4s; }
+  margin: auto; }
   .alpin-lightbox .my-content.active-content {
     background-color: #fff;
-    top: 0;
     height: auto;
-    padding: 20px; }
+    padding: 20px;
+    -webkit-animation: slide .4s;
+    animation: slide .4s; }
 
 .alpin-lightbox .overlay {
   top: 0;
