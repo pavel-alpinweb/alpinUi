@@ -22,9 +22,6 @@ $(document).ready(function() {
 			$('.my-content').removeClass('active-content');
 			$('#' + myTarget).addClass('active-content');
 
-			/*Оборачиваем активный элемент в оверлей*/
-			$('.alpin-lightbox .active-content').wrap('<div class="overlay"></div>');
-
 			// меняем активность у вкладок
 			var activeContent = $('#' + myTarget).attr('id');
 			$('.trigger').removeClass('active-trigger');
@@ -32,7 +29,8 @@ $(document).ready(function() {
 
 			/*Скрипты для окон*/
 
-			
+			/*Оборачиваем активный элемент в оверлей*/
+			$('.alpin-lightbox .active-content').wrap('<div class="overlay"></div>');
 		});
 
 		$('body').on('click', '.overlay', function(event) {

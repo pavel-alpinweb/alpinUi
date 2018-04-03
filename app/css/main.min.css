@@ -104,6 +104,7 @@ img {
     cursor: pointer; }
 
 .alpin-lightbox .my-content {
+  position: relative;
   width: 100%;
   overflow: hidden;
   padding: 0px;
@@ -113,17 +114,20 @@ img {
   box-shadow: 0 0 5px #000;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background-color: #000;
-  height: 0;
-  -webkit-transition: all .4s;
-  -o-transition: all .4s;
-  transition: all .4s;
-  margin: auto; }
+  background-color: #fff;
+  height: 0px;
+  top: 50%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: auto;
+  -webkit-transition: top .4s;
+  -o-transition: top .4s;
+  transition: top .4s; }
   .alpin-lightbox .my-content.active-content {
     background-color: #fff;
+    top: 0;
     height: auto;
-    padding: 20px;
-    top: 50%; }
+    padding: 20px; }
 
 .alpin-lightbox .overlay {
   top: 0;
