@@ -9,7 +9,7 @@ $(document).ready(function() {
 			});
 
 			
-			
+			$('.alpin-lightbox .my-content').removeClass('active-content');
 			
 		
 		/*главная функция смены элемента*/
@@ -26,11 +26,49 @@ $(document).ready(function() {
 			var activeContent = $('#' + myTarget).attr('id');
 			$('.trigger').removeClass('active-trigger');
 			$('[data-target=' + activeContent + ']').addClass('active-trigger');	
+
+			/*Скрипты для окон*/
+
+			/*Оборачиваем активный элемент в оверлей*/
+			$('.alpin-lightbox .active-content').wrap('<div class="overlay"></div>');
+			/*Высчитываем верхний отступ*/	
+			var windowHeight = 	$('#' + myTarget).height();
+			var cssTop = windowHeight/2;
+			
+			if(!$('#' + myTarget).parent('.overlay').length == 0){
+				$('#' + myTarget).css('margin-top', '-' + cssTop + "px");
+			}
+			else{
+				$('#' + myTarget).css('margin-top', 0);
+			}	
 		});
 
+		$('body').on('click', '.overlay', function(event) {
+			$('.active-content').removeClass('active-content').unwrap('.overlay').css('margin-top', 0);
+		});
 
-	$('.change-style').click(function(event) {
-		$('.alpin-ui').toggleClass('alpin-accordion');
-		$('.alpin-ui').toggleClass('alpin-tabs');
+	/*функция перерисовки виджетов*/
+
+	function changeVidget(selector,vidget){
+		$(selector)
+		.removeClass('alpin-accordion')
+		.removeClass('alpin-lightbox')
+		.removeClass('alpin-tabs')
+		.addClass(vidget);
+	}
+
+	/*Кнопки смены виджетов*/
+
+	$('.change-style-tabs').click(function(event) {
+		changeVidget('.alpin-ui','alpin-tabs');
+	});
+
+	$('.change-style-accordion').click(function(event) {
+		changeVidget('.alpin-ui','alpin-accordion');
+	});
+
+	$('.change-style-lightbox').click(function(event) {
+		changeVidget('.alpin-ui','alpin-lightbox');
+		$('.alpin-lightbox .my-content').removeClass('active-content');
 	});
 });

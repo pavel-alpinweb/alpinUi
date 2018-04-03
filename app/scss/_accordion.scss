@@ -15,7 +15,7 @@
 		position: relative;
 		overflow: hidden;
 		max-height: 0;
-		transition: max-height .3s cubic-bezier(.44,.64,.4,.97);
+		transition: max-height .4s cubic-bezier(.44,.64,.4,.97);
 		padding: 0px;
 		padding: 0 15px;
 		&.active-content{

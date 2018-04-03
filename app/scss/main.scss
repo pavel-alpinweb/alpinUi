@@ -3,6 +3,7 @@
 @import "_base";
 @import "_tabs";
 @import "_accordion";
+@import "_lightbox";
 
 body,html{
 	height: 100%;
@@ -10,5 +11,9 @@ body,html{
 	background-color: white;
 	color: #000;
 	font-family: $mainFont;
+}
+
+.alpin-ui{
+	padding: 20px;
 }
 
