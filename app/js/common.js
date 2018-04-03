@@ -30,11 +30,12 @@ $(document).ready(function() {
 			/*Скрипты для окон*/
 
 			/*Оборачиваем активный элемент в оверлей*/
-			$('.alpin-lightbox .active-content').wrap('<div class="overlay"></div>');
+			// $('.alpin-lightbox .active-content').wrap('<div class="overlay"></div>');
+			$('.alpin-lightbox .content-container').addClass('open');
 		});
 
-		$('body').on('click', '.overlay', function(event) {
-			$('.active-content').removeClass('active-content').unwrap('.overlay');
+		$('body').on('click', '.open', function(event) {
+			$('.active-content').removeClass('active-content').unwrap('.open');
 		});
 
 	/*функция перерисовки виджетов*/

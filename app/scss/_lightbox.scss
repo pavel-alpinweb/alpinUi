@@ -26,18 +26,18 @@
 		border-radius: 10px;
 		background-color: #fff;
 		height: 0px;
-		top:50%;
+		top:50vh;
 		box-sizing:border-box;
 		margin: auto;
 		transition:top .4s;
 		&.active-content{
 			background-color: #fff;
-			top:0;
+			top:0vh;
 			height: auto;
 			padding: 20px;
 		}
 	}
-	.overlay{
+	.content-container.open{
 		top:0;
 		right: 0;
 		left: 0;
