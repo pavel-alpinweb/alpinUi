@@ -31,20 +31,10 @@ $(document).ready(function() {
 
 			/*Оборачиваем активный элемент в оверлей*/
 			$('.alpin-lightbox .active-content').wrap('<div class="overlay"></div>');
-			/*Высчитываем верхний отступ*/	
-			var windowHeight = 	$('#' + myTarget).height();
-			var cssTop = windowHeight/2;
-			
-			if(!$('#' + myTarget).parent('.overlay').length == 0){
-				$('#' + myTarget).css('margin-top', '-' + cssTop + "px");
-			}
-			else{
-				$('#' + myTarget).css('margin-top', 0);
-			}	
 		});
 
 		$('body').on('click', '.overlay', function(event) {
-			$('.active-content').removeClass('active-content').unwrap('.overlay').css('margin-top', 0);
+			$('.active-content').removeClass('active-content').unwrap('.overlay');
 		});
 
 	/*функция перерисовки виджетов*/
