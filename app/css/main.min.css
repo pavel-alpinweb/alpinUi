@@ -116,7 +116,7 @@ img {
   border-radius: 10px;
   background-color: #fff;
   height: 0px;
-  top: 50vh;
+  top: 50%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: auto;
@@ -125,11 +125,11 @@ img {
   transition: top .4s; }
   .alpin-lightbox .my-content.active-content {
     background-color: #fff;
-    top: 0vh;
+    top: 0;
     height: auto;
     padding: 20px; }
 
-.alpin-lightbox .content-container.open {
+.alpin-lightbox .overlay {
   top: 0;
   right: 0;
   left: 0;
