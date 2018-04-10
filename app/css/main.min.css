@@ -1,0 +1,170 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%; }
+
+body {
+  font-size: 16px;
+  min-width: 320px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  line-height: 1.75;
+  overflow-x: hidden;
+  opacity: 1;
+  color: #333; }
+
+.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+input, a, textarea, button {
+  outline: none;
+  cursor: pointer;
+  border: none; }
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
+.text-center {
+  text-align: center; }
+
+.alpin-tabs .trigger-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.alpin-tabs .trigger {
+  padding: 10px;
+  border: 1px solid;
+  cursor: pointer; }
+  .alpin-tabs .trigger.active-trigger {
+    background-color: yellow; }
+
+.alpin-tabs .content-container {
+  position: relative;
+  height: 600px; }
+  .alpin-tabs .content-container > .trigger {
+    display: none !important; }
+
+.alpin-tabs .my-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: -1; }
+  .alpin-tabs .my-content.active-content {
+    display: block !important;
+    z-index: 1; }
+
+.alpin-accordion .trigger {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid;
+  cursor: pointer; }
+  .alpin-accordion .trigger.active-trigger {
+    background-color: yellow; }
+
+.alpin-accordion .trigger-container {
+  display: none; }
+
+.alpin-accordion .my-content {
+  position: relative;
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: max-height 0.4s cubic-bezier(0.44, 0.64, 0.4, 0.97);
+  -o-transition: max-height 0.4s cubic-bezier(0.44, 0.64, 0.4, 0.97);
+  transition: max-height 0.4s cubic-bezier(0.44, 0.64, 0.4, 0.97);
+  padding: 0px;
+  padding: 0 15px; }
+  .alpin-accordion .my-content.active-content {
+    max-height: 600px;
+    padding: 15px; }
+
+@-webkit-keyframes slide {
+  from {
+    opacity: 0;
+    top: 50vh; }
+  to {
+    opacity: 1;
+    top: 0vh; } }
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    top: 50vh; }
+  to {
+    opacity: 1;
+    top: 0vh; } }
+
+.alpin-lightbox .content-container > .trigger {
+  display: none; }
+
+.alpin-lightbox .trigger {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid black;
+  margin-left: -5px;
+  margin-right: 15px; }
+  .alpin-lightbox .trigger:hover {
+    background-color: yellow;
+    cursor: pointer; }
+
+.alpin-lightbox .my-content {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0px;
+  border: none;
+  max-width: 50%;
+  -webkit-box-shadow: 0 0 5px #000;
+  box-shadow: 0 0 5px #000;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  height: 0px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: auto; }
+  .alpin-lightbox .my-content.active-content {
+    background-color: #fff;
+    height: auto;
+    padding: 20px;
+    -webkit-animation: slide .4s;
+    animation: slide .4s; }
+
+.alpin-lightbox .overlay {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 0;
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+body, html {
+  height: 100%;
+  padding: 0;
+  background-color: white;
+  color: #000;
+  font-family: Arial, sans-serif; }
+
+.alpin-ui {
+  padding: 20px; }
