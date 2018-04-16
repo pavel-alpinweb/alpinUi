@@ -13,6 +13,8 @@ body {
   font-size: 16px;
   min-width: 320px;
   position: relative;
+  margin: 0;
+  padding: 0;
   line-height: 1.75;
   overflow-x: hidden;
   opacity: 1;
@@ -35,9 +37,200 @@ img {
 .text-center {
   text-align: center; }
 
+.alpin-tabs .trigger-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.alpin-tabs .trigger {
+  padding: 10px;
+  border: 1px solid;
+  cursor: pointer; }
+  .alpin-tabs .trigger.active-trigger {
+    background-color: yellow; }
+
+.alpin-tabs .content-container {
+  position: relative;
+  height: 600px; }
+  .alpin-tabs .content-container > .trigger {
+    display: none !important; }
+
+.alpin-tabs .my-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: -1; }
+  .alpin-tabs .my-content.active-content {
+    display: block !important;
+    z-index: 1; }
+
+.alpin-accordion .trigger {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid;
+  cursor: pointer; }
+  .alpin-accordion .trigger.active-trigger {
+    background-color: yellow; }
+
+.alpin-accordion .trigger-container {
+  display: none; }
+
+.alpin-accordion .my-content {
+  position: relative;
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: max-height 0.4s cubic-bezier(0.44, 0.64, 0.4, 0.97);
+  -o-transition: max-height 0.4s cubic-bezier(0.44, 0.64, 0.4, 0.97);
+  transition: max-height 0.4s cubic-bezier(0.44, 0.64, 0.4, 0.97);
+  padding: 0px;
+  padding: 0 15px; }
+  .alpin-accordion .my-content.active-content {
+    max-height: 600px;
+    padding: 15px; }
+
+@-webkit-keyframes slideNext {
+  from {
+    left: -100%; }
+  to {
+    left: 0; } }
+
+@keyframes slideNext {
+  from {
+    left: -100%; }
+  to {
+    left: 0; } }
+
+@-webkit-keyframes slidePrev {
+  from {
+    right: -100%; }
+  to {
+    right: 0; } }
+
+@keyframes slidePrev {
+  from {
+    right: -100%; }
+  to {
+    right: 0; } }
+
+.alpin-slider .trigger-container, .alpin-slider .trigger {
+  display: none; }
+
+.alpin-slider .content-container {
+  position: relative;
+  padding: 50px 50px;
+  border: 1px solid yellow;
+  min-height: 400px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .alpin-slider .content-container .my-content {
+    display: none;
+    position: relative; }
+    .alpin-slider .content-container .my-content.active-content {
+      display: block; }
+  .alpin-slider .content-container .alpin-next, .alpin-slider .content-container .alpin-prev {
+    width: 0;
+    height: 0;
+    border: 25px solid transparent;
+    position: absolute;
+    top: 50%;
+    margin-top: -12.5px;
+    cursor: pointer;
+    opacity: 0.5;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s; }
+    .alpin-slider .content-container .alpin-next:hover, .alpin-slider .content-container .alpin-prev:hover {
+      opacity: 1; }
+  .alpin-slider .content-container .alpin-next {
+    border-left-color: yellow;
+    right: -15px; }
+  .alpin-slider .content-container .alpin-prev {
+    border-right-color: yellow;
+    left: -15px; }
+
+@-webkit-keyframes slide {
+  from {
+    opacity: 0;
+    top: 50vh; }
+  to {
+    opacity: 1;
+    top: 0vh; } }
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    top: 50vh; }
+  to {
+    opacity: 1;
+    top: 0vh; } }
+
+.alpin-lightbox .content-container > .trigger {
+  display: none; }
+
+.alpin-lightbox .trigger {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid black;
+  margin-left: -5px;
+  margin-right: 15px; }
+  .alpin-lightbox .trigger:hover {
+    background-color: yellow;
+    cursor: pointer; }
+
+.alpin-lightbox .my-content {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0px;
+  border: none;
+  max-width: 50%;
+  -webkit-box-shadow: 0 0 5px #000;
+  box-shadow: 0 0 5px #000;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  height: 0px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: auto; }
+  .alpin-lightbox .my-content.active-content {
+    background-color: #fff;
+    height: auto;
+    padding: 20px;
+    -webkit-animation: slide 0.4s !important;
+    animation: slide 0.4s !important; }
+
+.alpin-lightbox .overlay {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 0;
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
 body, html {
   height: 100%;
   padding: 0;
   background-color: white;
   color: #000;
   font-family: Arial, sans-serif; }
+
+.alpin-ui {
+  padding: 20px; }

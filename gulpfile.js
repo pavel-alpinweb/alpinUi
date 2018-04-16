@@ -82,7 +82,7 @@ gulp.task('sprite', function() {
 });
 
 
-gulp.task('build', ['clean', 'img', 'scss', 'scripts'], function() {
+gulp.task('build', ['clean', 'img', 'sass', 'scripts'], function() {
 
 	var buildCss = gulp.src([ // Переносим библиотеки в продакшен
 		'app/css/main.min.css',
