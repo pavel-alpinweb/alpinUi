@@ -1,0 +1,50 @@
+.alpin-slider{
+	@keyframes slideNext {
+		from {left:-100%;}
+		to {left:0;}
+	}
+	@keyframes slidePrev {
+		from {right:-100%;}
+		to {right:0;}
+	}
+	.trigger-container, .trigger{
+		display: none;
+	}
+	.content-container{
+		position: relative;
+		padding: 50px 50px;
+		border: 1px solid yellow;
+		min-height: 500px;
+		display: flex;
+		align-items:center;
+		.my-content{
+			display: none;
+			position: relative;
+			&.active-content{
+				display: block;
+			}
+		}
+		.alpin-next,.alpin-prev{
+			width: 0;
+			height: 0;
+			border: 25px solid transparent;
+			position: absolute;
+			top:50%;
+			margin-top: -12.5px;
+			cursor: pointer;
+			opacity: 0.5;
+			transition: all .4s;
+			&:hover{
+				opacity: 1;
+			}
+		}
+		.alpin-next{
+			border-left-color: yellow;
+			right: -15px;
+		}
+		.alpin-prev{
+			border-right-color: yellow;
+			left: -15px;
+		}
+	}
+}

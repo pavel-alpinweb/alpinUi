@@ -37,14 +37,52 @@ $(document).ready(function() {
 			$('.active-content').removeClass('active-content').unwrap('.overlay');
 		});
 
+	/*Скрипты для слайдера*/
+	$('.content-container').append('<div class="alpin-next"></div>').append('<div class="alpin-prev"></div>');
+
+	$('.content-container').on('click', '.alpin-next', function(event) {
+		
+		if(!$(this).siblings('.my-content').last().hasClass('active-content')){
+			$('.active-content').next().next()
+			.addClass('active-content')
+			.css('animation', 'slideNext .4s');
+			$('.active-content').first().removeClass('active-content');
+		}
+		else{
+			$(this).siblings('.my-content').removeClass('active-content');
+			$(this).siblings('.my-content').first().addClass('active-content').css('animation', 'slideNext .4s');
+		}
+	});
+	$('.content-container').on('click', '.alpin-prev', function(event) {
+		
+		if(!$(this).siblings('.my-content').first().hasClass('active-content')){
+			$('.active-content').prev().prev()
+			.addClass('active-content')
+			.css('animation', 'slidePrev .4s');
+			$('.active-content').last().removeClass('active-content');
+		}
+		else{
+			$(this).siblings('.my-content').removeClass('active-content');
+			$(this).siblings('.my-content').last().addClass('active-content').css('animation', 'slidePrev .4s');
+		}
+	});
+
+
+
 	/*функция перерисовки виджетов*/
 
 	function changeVidget(selector,vidget){
+		if($(selector).hasClass('alpin-lightbox')){
+			var openSlide = $(selector).children('.trigger-container').children('.active-trigger').attr('data-target');
+			$('#' + openSlide).addClass('active-content');
+		}
 		$(selector)
 		.removeClass('alpin-accordion')
 		.removeClass('alpin-lightbox')
 		.removeClass('alpin-tabs')
+		.removeClass('alpin-slider')
 		.addClass(vidget);
+
 	}
 
 	/*Кнопки смены виджетов*/
@@ -60,5 +98,9 @@ $(document).ready(function() {
 	$('.change-style-lightbox').click(function(event) {
 		changeVidget('.alpin-ui','alpin-lightbox');
 		$('.alpin-lightbox .my-content').removeClass('active-content');
+	});
+
+	$('.change-style-slider').click(function(event) {
+		changeVidget('.alpin-ui','alpin-slider');
 	});
 });
