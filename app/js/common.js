@@ -52,6 +52,11 @@ $(document).ready(function() {
 			$(this).siblings('.my-content').removeClass('active-content');
 			$(this).siblings('.my-content').first().addClass('active-content').css('animation', 'slideNext .4s');
 		}
+
+		// меняем активность у вкладок
+		var activeSlide = $(this).siblings('.active-content').attr('id');
+		$('.trigger').removeClass('active-trigger');
+		$('[data-target=' + activeSlide + ']').addClass('active-trigger');
 	});
 	$('.content-container').on('click', '.alpin-prev', function(event) {
 		
@@ -65,6 +70,11 @@ $(document).ready(function() {
 			$(this).siblings('.my-content').removeClass('active-content');
 			$(this).siblings('.my-content').last().addClass('active-content').css('animation', 'slidePrev .4s');
 		}
+
+		// меняем активность у вкладок
+		var activeSlide = $(this).siblings('.active-content').attr('id');
+		$('.trigger').removeClass('active-trigger');
+		$('[data-target=' + activeSlide + ']').addClass('active-trigger');
 	});
 
 
