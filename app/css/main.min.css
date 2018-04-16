@@ -121,7 +121,7 @@ img {
   position: relative;
   padding: 50px 50px;
   border: 1px solid yellow;
-  min-height: 500px;
+  min-height: 400px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
